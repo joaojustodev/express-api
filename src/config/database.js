@@ -1,18 +1,20 @@
+import path from "path";
+
 const prod = process.env.NODE_ENV === "production";
 
 let dbConfig;
 
 if(!prod) {
-  dbconfig = {
+  dbConfig = {
     client: 'sqlite3',
     connection: {
-      filename: './database.sqlite'
+      filename: path.resolve(__dirname, "..", "database", "database.sqlite")
     },
     migrations: {
-      directory: "./migrations"
+      directory: path.resolve(__dirname, "..", "database", "migrations")
     },
     seeds: {
-      directory: './seeds',
+      directory: path.resolve(__dirname, "..", "database", "seeds")
     },
     useNullAsDefault: true
   }
@@ -28,11 +30,11 @@ if(!prod) {
       password: process.env.DATABASE_PASS,
     },
     migrations: {
-      directory: "./migrations",
+      directory: path.resolve(__dirname, "..", "database", "migrations"),
       tableName: 'knex_migrations',
     },
     seeds: {
-      directory: './seeds',
+      directory: path.resolve(__dirname, "..", "database", "seeds")
     },
     useNullAsDefault: true
   } 
