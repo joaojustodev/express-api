@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon -w src/**/*.js --exec babel-node src/server.js",
-    "build": "babel src --ignore src/**/*.spec.js,src/**/*.test.js --out-dir build",
-    "start": "node build/server.js"
+    "start": "babel-node src/server.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -27,6 +26,12 @@
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.5",
     "babel-preset-env": "^1.7.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "eslint": "^7.10.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }
