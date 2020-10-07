@@ -1,6 +1,7 @@
-import sessionLogin from "./login";
-
+import loginSessionController from "./loginSessionController";
+import registerSessionController from "./registerSessionController";
 
 export default {
-  sessionLogin
-}
+  loginSessionController,
+  registerSessionController
+};
