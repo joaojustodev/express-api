@@ -1,20 +1,14 @@
 import express from "express";
 import userController from "./controllers/User";
 import sessionController from "./controllers/Session";
-
+import authMiddleware from "./middleware/authMiddleware";
 
 const router = express.Router();
 
+router.post("/users", authMiddleware, userController.findUsersController);
+router.post("/users/:id", authMiddleware, userController.findUserController);
 
-router.get("/users", userController.findUsersController);
-router.get("/users/:id", userController.findUserController)
-router.post("/users", userController.createUserController)
-router.delete("/users/:id")
-router.put("/users/:id")
-
-
-router.post("/login", sessionController.sessionLogin);
-
-
+router.post("/login", sessionController.loginSessionController);
+router.post("/register", sessionController.registerSessionController);
 
 export { router };
