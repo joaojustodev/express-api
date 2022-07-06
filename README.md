@@ -1,5 +1,5 @@
 <h1 align="center">
-  <strong>Autheticate API</strong>
+  <strong>Authentication API</strong>
 </h1>
 
 <p align="center">
